@@ -1,31 +1,465 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#171717">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171717">
 <meta name="description" content="The Anarchist Confederation (TAC): autonomy, mutual aid, free association and voluntary federation.">
-<title>The Anarchist Confederation (TAC)</title><link rel="icon" href="assets/tac-official-round-insignia.jpg"><link rel="stylesheet" href="styles.css">
+<title>The Anarchist Confederation (TAC)</title>
+<link rel="icon" href="assets/tac-official-round-insignia.jpg">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <a class="skip" href="#main">Skip to content</a>
-<header class="header"><a class="brand" href="#home"><img src="assets/tac-official-round-insignia.jpg" alt="Official TAC round insignia"><span><b>THE ANARCHIST<br>CONFEDERATION</b><small>TAC · VOLUNTARY FEDERATION</small></span></a>
-<button class="menu" id="menu" aria-expanded="false" aria-controls="nav">☰ <span class="sr">Open navigation</span></button>
-<nav id="nav"><a href="#about">About</a><a href="#charter">Charter &amp; manifesto</a><a href="#network">Node directory</a><a href="#members">Members &amp; affiliates</a><a href="#governance">Governance</a><a href="#projects">Mutual aid</a><a href="#news">News</a><a href="#contacts">Contacts</a><a class="nav-join" href="#join">Apply to join</a><label class="lang-label" for="language">Language</label><select id="language" aria-label="Select language"><option value="en">English</option><option value="mt">Malti</option><option value="es">Español (España)</option><option value="fr">Français</option><option value="it">Italiano</option><option value="de">Deutsch</option><option value="vi">Tiếng Việt</option><option value="hi">हिन्दी</option><option value="zh-CN">简体中文（普通话）</option><option value="ru">Русский</option><option value="ar">العربية</option><option value="pt">Português (Portugal)</option><option value="nl">Nederlands</option><option value="el">Ελληνικά</option><option value="ko">한국어</option><option value="ja">日本語</option><option value="af">Afrikaans</option><option value="zu">isiZulu</option><option value="mn">Монгол</option><option value="lo">ລາວ</option></select><p id="languageStatus" class="language-status" role="status" aria-live="polite" hidden></p></nav></header>
+
+<header class="header">
+  <a class="brand" href="#home">
+    <img src="assets/tac-official-round-insignia.jpg" alt="Official TAC round insignia">
+    <span>
+      <b>THE ANARCHIST<br>CONFEDERATION</b>
+      <small>TAC · VOLUNTARY FEDERATION</small>
+    </span>
+  </a>
+
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">
+    ☰ <span class="sr">Open navigation</span>
+  </button>
+
+  <nav id="nav">
+    <a href="#about">About</a>
+    <a href="#charter">Charter &amp; manifesto</a>
+    <a href="#network">Node directory</a>
+    <a href="#members">Members &amp; affiliates</a>
+    <a href="#governance">Governance</a>
+    <a href="#projects">Mutual aid</a>
+    <a href="#news">News</a>
+    <a href="#contacts">Contacts</a>
+    <a class="nav-join" href="#join">Apply to join</a>
+
+    <label class="lang-label" for="language">Language</label>
+    <select id="language" aria-label="Select language">
+      <option value="en">🇬🇧 English</option>
+      <option value="mt">🇲🇹 Malti</option>
+      <option value="es">🇪🇸 Español (España)</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="vi">🇻🇳 Tiếng Việt</option>
+      <option value="hi">🇮🇳 हिन्दी</option>
+      <option value="zh-CN">🇨🇳 简体中文（普通话）</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="ar">🇸🇦 العربية</option>
+      <option value="pt">🇵🇹 Português (Portugal)</option>
+      <option value="nl">🇳🇱 Nederlands</option>
+      <option value="el">🇬🇷 Ελληνικά</option>
+      <option value="ko">🇰🇷 한국어</option>
+      <option value="ja">🇯🇵 日本語</option>
+      <option value="af">🇿🇦 Afrikaans</option>
+      <option value="zu">🇿🇦 isiZulu</option>
+      <option value="mn">🇲🇳 Монгол</option>
+      <option value="lo">🇱🇦 ລາວ</option>
+    </select>
+
+    <p id="languageStatus" class="language-status" role="status" aria-live="polite" hidden></p>
+  </nav>
+</header>
+
 <main id="main">
-<section class="hero" id="home"><div class="hero-copy"><p class="eyebrow">AUTONOMY · SOLIDARITY · FEDERATION</p><h1>No Gods. No Masters.<br><em>Mutual Aid. Free Association.</em></h1><p class="lede">The Anarchist Confederation connects autonomous communities, collectives, labour unions and individuals through voluntary cooperation, direct participation and mutual aid.</p><div class="actions"><a class="button red" href="#charter">Read the charter ↗</a><a class="underlink" href="#join">Explore participation →</a></div><p class="note">A confederation of autonomous participants — not a centralised ruling body.</p></div><div class="hero-art"><div class="halo"></div><img src="assets/tac-official-round-insignia.jpg" alt="Official TAC round insignia"><span>OFFICIAL CONFEDERATION INSIGNIA</span></div><div class="hero-foot"><span>Organise locally. Federate voluntarily.</span><span>01 / TAC</span></div></section>
-<section class="section intro" id="about"><div class="kicker">01 / WHO WE ARE</div><div class="two"><h2>Freedom grows through <em>cooperation,</em> not command.</h2><div><p>TAC is a decentralised, voluntary association of independent digital communities, physical collectives, labour unions and individuals committed to libertarian socialism, anti-authoritarianism and mutual aid.</p><p>The confederation exists to enable connection and collective action while respecting the autonomy of its participating nodes and members.</p></div></div></section>
-<section class="section paper" id="charter"><div class="kicker">02 / FOUNDATIONAL DOCUMENTS</div><div class="section-head"><h2>Shared principles.<br><em>Openly documented.</em></h2><p>The adopted charter and manifesto are TAC’s authoritative foundational texts. This page is an introduction, not a replacement for those documents.</p></div><div class="doc-grid"><article class="tile"><span class="tile-no">DOCUMENT 01</span><h3>Foundational Charter</h3><p>Purpose, membership, confederal structure, shared principles and the rights and responsibilities of participants.</p><div class="document-actions"><a class="button red" href="documents/TAC_Foundational_Charter_and_Manifesto.pdf" target="_blank" rel="noopener noreferrer">Read PDF ↗</a><a href="documents/TAC_Foundational_Charter_and_Manifesto.pdf" download>Download PDF ↓</a></div><span class="status">Official source file · charter and manifesto combined</span></article><article class="tile"><span class="tile-no">DOCUMENT 02</span><h3>Manifesto</h3><p>The movement’s political aims and commitments, published in the same supplied source file as the foundational charter.</p><div class="document-actions"><a class="button red" href="documents/TAC_Foundational_Charter_and_Manifesto.pdf#page=1" target="_blank" rel="noopener noreferrer">Read source PDF ↗</a><a href="documents/TAC_Foundational_Charter_and_Manifesto.pdf" download>Download PDF ↓</a></div><span class="status">Official source file · combined document</span></article><article class="tile"><span class="tile-no">DOCUMENT 03</span><h3>Supervision Council SOP</h3><p>Procedural guidance for the Council’s defined duties, without turning it into a command authority over autonomous nodes.</p><div class="document-actions"><a class="button red" href="documents/TAC_Supervision_Council_SOP.pdf" target="_blank" rel="noopener noreferrer">Read PDF ↗</a><a href="documents/TAC_Supervision_Council_SOP.pdf" download>Download PDF ↓</a></div><span class="status">Supplied official procedure document</span></article><article class="tile"><span class="tile-no">DOCUMENT 04</span><h3>Vision, Mission &amp; Core Values</h3><p>The supplied summary of TAC’s vision, mission and core values.</p><div class="document-actions"><a class="button red" href="documents/TAC_Vision_Mission_and_Core_Values.pdf" target="_blank" rel="noopener noreferrer">Read PDF ↗</a><a href="documents/TAC_Vision_Mission_and_Core_Values.pdf" download>Download PDF ↓</a></div><span class="status">Supplied reference document</span></article></div><p class="document-note">These links serve the supplied PDFs directly. Confirm official version numbers, adoption dates and any publication restrictions before treating this page as a formal document register.</p></section>
-<section class="section principles"><div class="kicker">03 / PRINCIPLES IN PRACTICE</div><div class="principle-grid"><article><b>01</b><h3>Autonomy</h3><p>Participating nodes retain their internal self-organisation and decision-making.</p></article><article><b>02</b><h3>Voluntary association</h3><p>Cooperation is built through consent, shared commitments and negotiated agreements.</p></article><article><b>03</b><h3>Mutual aid</h3><p>Resources, knowledge, labour and practical support are shared to meet collective needs.</p></article><article><b>04</b><h3>Accountability</h3><p>Delegated responsibilities are limited by their mandate and subject to transparent review.</p></article></div></section>
-<section class="dark" id="network"><div class="section network"><div><div class="kicker light">04 / CONNECTED, NOT CONTROLLED</div><h2>Many communities.<br><em>One confederation.</em></h2><p>Discover participating nodes, collectives, unions and partner projects. A directory entry should describe a group’s own work and contact preferences; it must not imply that the confederation commands it.</p><a class="button light-button" href="#directory">Explore the directory ↓</a></div><div class="network-graphic" aria-label="Diagram showing autonomous groups connected horizontally"><span class="node n1">COMMUNITY</span><span class="node n2">UNION</span><span class="node n3">COLLECTIVE</span><span class="node n4">DIGITAL NODE</span><span class="node center">TAC</span><small>COORDINATION WITHOUT COMMAND</small></div></div></section>
-<section class="section" id="directory"><div class="kicker">05 / PUBLIC NODE DIRECTORY</div><div class="section-head"><h2>Find your <em>connections.</em></h2><p>Directory structure is ready for verified entries. No fictional member groups or contact details are included in this prototype.</p></div><div class="filter-row"><label for="nodeSearch">Search entries</label><input id="nodeSearch" type="search" placeholder="Search by name, location or focus"><label for="nodeType">Type</label><select id="nodeType"><option value="all">All types</option><option>Community</option><option>Collective</option><option>Labour union</option><option>Digital node</option><option>Associate partner</option></select></div><div class="empty-state"><span>DIRECTORY / 00 ENTRIES</span><h3>Build the directory together.</h3><p>Entries will be added after the participating group has confirmed its information and what it wishes to make public.</p></div></section>
-<section class="section members" id="members"><div class="kicker">06 / CONFEDERATION NETWORK</div><div class="section-head"><h2>Official members<br><em>&amp; affiliates.</em></h2><p>These listings distinguish official membership from affiliate relationships. Each organisation remains autonomous; listing does not imply command, ownership or control by TAC.</p></div><div class="member-grid"><article class="member-card official"><span class="member-label">OFFICIAL MEMBER</span><h3>Kroptkin European International</h3><p>Official member organisation of The Anarchist Confederation.</p><a class="button red" href="https://discord.gg/EJjf3fyA25" target="_blank" rel="noopener noreferrer">Visit Discord ↗</a></article><article class="member-card affiliate"><span class="member-label">AFFILIATE MEMBER</span><h3>Radical Secularist International</h3><p>Affiliate organisation connected through cooperation while retaining its own autonomy.</p><a class="button outline-button" href="https://discord.gg/zqHr5pJFP3" target="_blank" rel="noopener noreferrer">Visit Discord ↗</a></article></div><p class="members-note">Directory entries should be maintained with each organisation’s consent and updated when its affiliation status changes.</p></section>
-<section class="section contacts" id="contacts"><div class="kicker">07 / OFFICIAL CONTACTS</div><div class="section-head"><h2>Connect with <em>TAC.</em></h2><p>Use these channels to follow updates, contact the movement or enquire about membership and affiliation.</p></div><div class="contact-grid"><a class="contact-card" href="https://www.youtube.com/@InternationalAnarchyORG" target="_blank" rel="noopener noreferrer"><span class="contact-platform">YOUTUBE</span><b>@InternationalAnarchyORG</b><span>Watch and follow video updates ↗</span></a><a class="contact-card" href="https://www.tiktok.com/@sky.war.sage" target="_blank" rel="noopener noreferrer"><span class="contact-platform">TIKTOK</span><b>@sky.war.sage</b><span>Follow short-form updates ↗</span></a><a class="contact-card" href="https://www.instagram.com/sky.wave.sage/" target="_blank" rel="noopener noreferrer"><span class="contact-platform">INSTAGRAM</span><b>@sky.wave.sage</b><span>Follow posts and announcements ↗</span></a><a class="contact-card email-card" href="mailto:secularperspective@outlook.com"><span class="contact-platform">EMAIL</span><b>secularperspective@outlook.com</b><span>General enquiries and membership applications ↗</span></a></div></section>
-<section class="section governance" id="governance"><div class="kicker">06 / HOW WE ORGANISE</div><div class="two"><div><h2>Delegation is a task,<br><em>not a throne.</em></h2><p>The General Assembly is the federation-wide deliberative forum for active membership. Autonomous nodes retain their own self-organisation. The Supervision Council performs the procedural and liaison duties defined by the charter; it is not a central command over nodes.</p><a class="underlink" href="#transparency">See transparency principles →</a></div><div class="governance-diagram"><div class="diagram-box"><b>General Assembly</b><small>Active membership · confederation-wide deliberation</small></div><div class="connector">mandates · coordination · accountability</div><div class="diagram-row"><div class="diagram-box"><b>Autonomous nodes</b><small>Local self-organisation</small></div><div class="diagram-box"><b>Supervision Council</b><small>Defined procedural role · no command authority</small></div></div><p class="caption">A conceptual relationship, not a hierarchy of command.</p></div></div></section>
-<section class="dark flags"><div class="section"><div class="kicker light">07 / OFFICIAL SYMBOLS</div><div class="section-head"><h2>Recognisable symbols.<br><em>Shared commitments.</em></h2><p>Supplied official artwork is used as provided. The mutual-defence variant is shown as a distinct flag variant, not as a replacement for the primary flag.</p></div><div class="flag-grid"><figure><img src="assets/tac-anarcho-syndicalist-cog-flag.jpg" alt="TAC anarcho-syndicalist cog flag"><figcaption><b>Anarcho-Syndicalist Cog Flag</b><span>Worker-led unionism, labour organisation and technical collectives.</span></figcaption></figure><figure><img src="assets/tac-mutual-defense-shield-flag.jpg" alt="TAC mutual-defence shield flag variant"><figcaption><b>Mutual-Defence Shield Variant</b><span>Federated moderation defence, security, resilience and platform protection.</span></figcaption></figure></div></div></section>
-<section class="section" id="projects"><div class="kicker">08 / MUTUAL AID &amp; COLLABORATION</div><div class="section-head"><h2>Solidarity made <em>practical.</em></h2><p>Use this space to find collaborators, share resources and propose projects without centralising control over local work.</p></div><div class="doc-grid"><article class="tile"><span class="tile-no">PROJECTS</span><h3>Collaborative initiatives</h3><p>Shared work proposed and maintained by the people and groups involved.</p></article><article class="tile"><span class="tile-no">RESOURCES</span><h3>Mutual-aid resources</h3><p>Voluntarily contributed skills, materials, guides and support offers.</p></article><article class="tile"><span class="tile-no">PARTICIPATION</span><h3>Start a proposal</h3><p>Bring an idea to the relevant autonomous group or agreed confederal process.</p></article></div><p class="status">Project listings and submissions will be enabled after the CMS workflow is configured.</p></section>
-<section class="section news" id="news"><div class="kicker">09 / NEWS &amp; ANNOUNCEMENTS</div><div class="section-head"><h2>Updates from the <em>network.</em></h2><p>Only approved announcements will appear here. This prototype contains no fabricated news or decision records.</p></div><div class="empty-state"><span>NEWS / AWAITING FIRST PUBLISHED ITEM</span><h3>Publication space ready.</h3><p>The CMS should support draft, review, approval and correction history, with author permissions defined by collective agreement.</p></div></section>
-<section class="section transparency" id="transparency"><div class="two"><div><div class="kicker">10 / TRANSPARENCY &amp; RECORDS</div><h2>Open decisions.<br><em>Careful stewardship.</em></h2></div><div><p>Publish decisions and administrative records that are designated public under TAC’s rules. Protect personal information, private correspondence, and security-sensitive details.</p><div class="record"><span class="dot"></span><b>Public decisions log</b><span>Awaiting approved records</span></div><div class="record"><span class="dot"></span><b>Amendment history</b><span>CMS workflow to be configured</span></div></div></div></section>
-<section class="join-wrap" id="join"><div class="section join-panel"><div><div class="kicker light">13 / PARTICIPATE</div><h2>Organise locally.<br><em>Connect horizontally.</em></h2><p>Interested in joining or partnering with TAC? Start with the charter and contact the confederation. Formal applications must be handled through an agreed process, with clear criteria and a record of decisions.</p></div><div class="join-actions"><a class="button red" href="mailto:secularperspective@outlook.com?subject=TAC%20membership%20enquiry">Contact TAC ↗</a><a class="underlink" href="mailto:secularperspective@outlook.com?subject=TAC%20membership%20application%20enquiry">Ask about membership →</a><small>secularperspective@outlook.com</small></div></div></section>
+
+  <section class="hero" id="home">
+    <div class="hero-copy">
+      <p class="eyebrow">AUTONOMY · SOLIDARITY · FEDERATION</p>
+      <h1>No Gods. No Masters.<br><em>Mutual Aid. Free Association.</em></h1>
+      <p class="lede">The Anarchist Confederation connects autonomous communities, collectives, labour unions and individuals through voluntary cooperation, direct participation and mutual aid.</p>
+      <div class="actions">
+        <a class="button red" href="#charter">Read the charter ↗</a>
+        <a class="underlink" href="#join">Explore participation →</a>
+      </div>
+      <p class="note">A confederation of autonomous participants — not a centralised ruling body.</p>
+    </div>
+
+    <div class="hero-art">
+      <div class="halo"></div>
+      <img src="assets/tac-official-round-insignia.jpg" alt="Official TAC round insignia">
+      <span>OFFICIAL CONFEDERATION INSIGNIA</span>
+    </div>
+
+    <div class="hero-foot">
+      <span>Organise locally. Federate voluntarily.</span>
+      <span>01 / TAC</span>
+    </div>
+  </section>
+
+  <section class="section intro" id="about">
+    <div class="kicker">01 / WHO WE ARE</div>
+    <div class="two">
+      <h2>Freedom grows through <em>cooperation,</em> not command.</h2>
+      <div>
+        <p>TAC is a decentralised, voluntary association of independent digital communities, physical collectives, labour unions and individuals committed to libertarian socialism, anti-authoritarianism and mutual aid.</p>
+        <p>The confederation exists to enable connection and collective action while respecting the autonomy of its participating nodes and members.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section paper" id="charter">
+    <div class="kicker">02 / FOUNDATIONAL DOCUMENTS</div>
+    <div class="section-head">
+      <h2>Shared principles.<br><em>Openly documented.</em></h2>
+      <p>The adopted charter and manifesto are TAC’s authoritative foundational texts. This page is an introduction, not a replacement for those documents.</p>
+    </div>
+
+    <div class="doc-grid">
+      <article class="tile">
+        <span class="tile-no">DOCUMENT 01</span>
+        <h3>Foundational Charter</h3>
+        <p>Purpose, membership, confederal structure, shared principles and the rights and responsibilities of participants.</p>
+        <div class="document-actions">
+          <a class="button red" href="documents/TAC_Foundational_Charter_and_Manifesto.pdf" target="_blank" rel="noopener noreferrer">Read PDF ↗</a>
+          <a href="documents/TAC_Foundational_Charter_and_Manifesto.pdf" download>Download PDF ↓</a>
+        </div>
+        <span class="status">Official source file · charter and manifesto combined</span>
+      </article>
+
+      <article class="tile">
+        <span class="tile-no">DOCUMENT 02</span>
+        <h3>Manifesto</h3>
+        <p>The movement’s political aims and commitments, published in the same supplied source file as the foundational charter.</p>
+        <div class="document-actions">
+          <a class="button red" href="documents/TAC_Foundational_Charter_and_Manifesto.pdf#page=1" target="_blank" rel="noopener noreferrer">Read source PDF ↗</a>
+          <a href="documents/TAC_Foundational_Charter_and_Manifesto.pdf" download>Download PDF ↓</a>
+        </div>
+        <span class="status">Official source file · combined document</span>
+      </article>
+
+      <article class="tile">
+        <span class="tile-no">DOCUMENT 03</span>
+        <h3>Supervision Council SOP</h3>
+        <p>Procedural guidance for the Council’s defined duties, without turning it into a command authority over autonomous nodes.</p>
+        <div class="document-actions">
+          <a class="button red" href="documents/TAC_Supervision_Council_SOP.pdf" target="_blank" rel="noopener noreferrer">Read PDF ↗</a>
+          <a href="documents/TAC_Supervision_Council_SOP.pdf" download>Download PDF ↓</a>
+        </div>
+        <span class="status">Supplied official procedure document</span>
+      </article>
+
+      <article class="tile">
+        <span class="tile-no">DOCUMENT 04</span>
+        <h3>Vision, Mission &amp; Core Values</h3>
+        <p>The supplied summary of TAC’s vision, mission and core values.</p>
+        <div class="document-actions">
+          <a class="button red" href="documents/TAC_Vision_Mission_and_Core_Values.pdf" target="_blank" rel="noopener noreferrer">Read PDF ↗</a>
+          <a href="documents/TAC_Vision_Mission_and_Core_Values.pdf" download>Download PDF ↓</a>
+        </div>
+        <span class="status">Supplied reference document</span>
+      </article>
+    </div>
+
+    <p class="document-note">These links serve the supplied PDFs directly. Confirm official version numbers, adoption dates and any publication restrictions before treating this page as a formal document register.</p>
+  </section>
+
+  <section class="section principles">
+    <div class="kicker">03 / PRINCIPLES IN PRACTICE</div>
+    <div class="principle-grid">
+      <article>
+        <b>01</b>
+        <h3>Autonomy</h3>
+        <p>Participating nodes retain their internal self-organisation and decision-making.</p>
+      </article>
+      <article>
+        <b>02</b>
+        <h3>Voluntary association</h3>
+        <p>Cooperation is built through consent, shared commitments and negotiated agreements.</p>
+      </article>
+      <article>
+        <b>03</b>
+        <h3>Mutual aid</h3>
+        <p>Resources, knowledge, labour and practical support are shared to meet collective needs.</p>
+      </article>
+      <article>
+        <b>04</b>
+        <h3>Accountability</h3>
+        <p>Delegated responsibilities are limited by their mandate and subject to transparent review.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="dark" id="network">
+    <div class="section network">
+      <div>
+        <div class="kicker light">04 / CONNECTED, NOT CONTROLLED</div>
+        <h2>Many communities.<br><em>One confederation.</em></h2>
+        <p>Discover participating nodes, collectives, unions and partner projects. A directory entry should describe a group’s own work and contact preferences; it must not imply that the confederation commands it.</p>
+        <a class="button light-button" href="#directory">Explore the directory ↓</a>
+      </div>
+
+      <div class="network-graphic" aria-label="Diagram showing autonomous groups connected horizontally">
+        <span class="node n1">COMMUNITY</span>
+        <span class="node n2">UNION</span>
+        <span class="node n3">COLLECTIVE</span>
+        <span class="node n4">DIGITAL NODE</span>
+        <span class="node center">TAC</span>
+        <small>COORDINATION WITHOUT COMMAND</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="directory">
+    <div class="kicker">05 / PUBLIC NODE DIRECTORY</div>
+    <div class="section-head">
+      <h2>Find your <em>connections.</em></h2>
+      <p>Directory structure is ready for verified entries. No fictional member groups or contact details are included in this prototype.</p>
+    </div>
+
+    <div class="filter-row">
+      <label for="nodeSearch">Search entries</label>
+      <input id="nodeSearch" type="search" placeholder="Search by name, location or focus">
+      <label for="nodeType">Type</label>
+      <select id="nodeType">
+        <option value="all">All types</option>
+        <option>Community</option>
+        <option>Collective</option>
+        <option>Labour union</option>
+        <option>Digital node</option>
+        <option>Associate partner</option>
+      </select>
+    </div>
+
+    <div class="empty-state">
+      <span>DIRECTORY / 00 ENTRIES</span>
+      <h3>Build the directory together.</h3>
+      <p>Entries will be added after the participating group has confirmed its information and what it wishes to make public.</p>
+    </div>
+  </section>
+
+  <section class="section members" id="members">
+    <div class="kicker">06 / CONFEDERATION NETWORK</div>
+    <div class="section-head">
+      <h2>Official members<br><em>&amp; affiliates.</em></h2>
+      <p>These listings distinguish official membership from affiliate relationships. Each organisation remains autonomous; listing does not imply command, ownership or control by TAC.</p>
+    </div>
+
+    <div class="member-grid">
+      <article class="member-card official">
+        <span class="member-label">OFFICIAL MEMBER</span>
+        <h3>Kroptkin European International</h3>
+        <p>Official member organisation of The Anarchist Confederation.</p>
+        <a class="button red" href="https://discord.gg/EJjf3fyA25" target="_blank" rel="noopener noreferrer">Visit Discord ↗</a>
+      </article>
+
+      <article class="member-card affiliate">
+        <span class="member-label">AFFILIATE MEMBER</span>
+        <h3>Radical Secularist International</h3>
+        <p>Affiliate organisation connected through cooperation while retaining its own autonomy.</p>
+        <a class="button outline-button" href="https://discord.gg/zqHr5pJFP3" target="_blank" rel="noopener noreferrer">Visit Discord ↗</a>
+      </article>
+    </div>
+
+    <p class="members-note">Directory entries should be maintained with each organisation’s consent and updated when its affiliation status changes.</p>
+  </section>
+
+  <section class="section contacts" id="contacts">
+    <div class="kicker">07 / OFFICIAL CONTACTS</div>
+    <div class="section-head">
+      <h2>Connect with <em>TAC.</em></h2>
+      <p>Use these channels to follow updates, contact the movement or enquire about membership and affiliation.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="https://www.youtube.com/@InternationalAnarchyORG" target="_blank" rel="noopener noreferrer">
+        <span class="contact-platform">YOUTUBE</span>
+        <b>@InternationalAnarchyORG</b>
+        <span>Watch and follow video updates ↗</span>
+      </a>
+
+      <a class="contact-card" href="https://www.tiktok.com/@sky.war.sage" target="_blank" rel="noopener noreferrer">
+        <span class="contact-platform">TIKTOK</span>
+        <b>@sky.war.sage</b>
+        <span>Follow short-form updates ↗</span>
+      </a>
+
+      <a class="contact-card" href="https://www.instagram.com/sky.wave.sage/" target="_blank" rel="noopener noreferrer">
+        <span class="contact-platform">INSTAGRAM</span>
+        <b>@sky.wave.sage</b>
+        <span>Follow posts and announcements ↗</span>
+      </a>
+
+      <a class="contact-card email-card" href="mailto:secularperspective@outlook.com">
+        <span class="contact-platform">EMAIL</span>
+        <b>secularperspective@outlook.com</b>
+        <span>General enquiries and membership applications ↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section governance" id="governance">
+    <div class="kicker">06 / HOW WE ORGANISE</div>
+    <div class="two">
+      <div>
+        <h2>Delegation is a task,<br><em>not a throne.</em></h2>
+        <p>The General Assembly is the federation-wide deliberative forum for active membership. Autonomous nodes retain their own self-organisation. The Supervision Council performs the procedural and liaison duties defined by the charter; it is not a central command over nodes.</p>
+        <a class="underlink" href="#transparency">See transparency principles →</a>
+      </div>
+
+      <div class="governance-diagram">
+        <div class="diagram-box">
+          <b>General Assembly</b>
+          <small>Active membership · confederation-wide deliberation</small>
+        </div>
+        <div class="connector">mandates · coordination · accountability</div>
+        <div class="diagram-row">
+          <div class="diagram-box">
+            <b>Autonomous nodes</b>
+            <small>Local self-organisation</small>
+          </div>
+          <div class="diagram-box">
+            <b>Supervision Council</b>
+            <small>Defined procedural role · no command authority</small>
+          </div>
+        </div>
+        <p class="caption">A conceptual relationship, not a hierarchy of command.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark flags">
+    <div class="section">
+      <div class="kicker light">07 / OFFICIAL SYMBOLS</div>
+      <div class="section-head">
+        <h2>Recognisable symbols.<br><em>Shared commitments.</em></h2>
+        <p>Supplied official artwork is used as provided. The mutual-defence variant is shown as a distinct flag variant, not as a replacement for the primary flag.</p>
+      </div>
+
+      <div class="flag-grid">
+        <figure>
+          <img src="assets/tac-anarcho-syndicalist-cog-flag.jpg" alt="TAC anarcho-syndicalist cog flag">
+          <figcaption>
+            <b>Anarcho-Syndicalist Cog Flag</b>
+            <span>Worker-led unionism, labour organisation and technical collectives.</span>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="assets/tac-mutual-defense-shield-flag.jpg" alt="TAC mutual-defence shield flag variant">
+          <figcaption>
+            <b>Mutual-Defence Shield Variant</b>
+            <span>Federated moderation defence, security, resilience and platform protection.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="kicker">08 / MUTUAL AID &amp; COLLABORATION</div>
+    <div class="section-head">
+      <h2>Solidarity made <em>practical.</em></h2>
+      <p>Use this space to find collaborators, share resources and propose projects without centralising control over local work.</p>
+    </div>
+
+    <div class="doc-grid">
+      <article class="tile">
+        <span class="tile-no">PROJECTS</span>
+        <h3>Collaborative initiatives</h3>
+        <p>Shared work proposed and maintained by the people and groups involved.</p>
+      </article>
+
+      <article class="tile">
+        <span class="tile-no">RESOURCES</span>
+        <h3>Mutual-aid resources</h3>
+        <p>Voluntarily contributed skills, materials, guides and support offers.</p>
+      </article>
+
+      <article class="tile">
+        <span class="tile-no">PARTICIPATION</span>
+        <h3>Start a proposal</h3>
+        <p>Bring an idea to the relevant autonomous group or agreed confederal process.</p>
+      </article>
+    </div>
+
+    <p class="status">Project listings and submissions will be enabled after the CMS workflow is configured.</p>
+  </section>
+
+  <section class="section news" id="news">
+    <div class="kicker">09 / NEWS &amp; ANNOUNCEMENTS</div>
+    <div class="section-head">
+      <h2>Updates from the <em>network.</em></h2>
+      <p>Only approved announcements will appear here. This prototype contains no fabricated news or decision records.</p>
+    </div>
+
+    <div class="empty-state">
+      <span>NEWS / AWAITING FIRST PUBLISHED ITEM</span>
+      <h3>Publication space ready.</h3>
+      <p>The CMS should support draft, review, approval and correction history, with author permissions defined by collective agreement.</p>
+    </div>
+  </section>
+
+  <section class="section transparency" id="transparency">
+    <div class="two">
+      <div>
+        <div class="kicker">10 / TRANSPARENCY &amp; RECORDS</div>
+        <h2>Open decisions.<br><em>Careful stewardship.</em></h2>
+      </div>
+
+      <div>
+        <p>Publish decisions and administrative records that are designated public under TAC’s rules. Protect personal information, private correspondence, and security-sensitive details.</p>
+        <div class="record">
+          <span class="dot"></span>
+          <b>Public decisions log</b>
+          <span>Awaiting approved records</span>
+        </div>
+        <div class="record">
+          <span class="dot"></span>
+          <b>Amendment history</b>
+          <span>CMS workflow to be configured</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-wrap" id="join">
+    <div class="section join-panel">
+      <div>
+        <div class="kicker light">13 / PARTICIPATE</div>
+        <h2>Organise locally.<br><em>Connect horizontally.</em></h2>
+        <p>Interested in joining or partnering with TAC? Start with the charter and contact the confederation. Formal applications must be handled through an agreed process, with clear criteria and a record of decisions.</p>
+      </div>
+
+      <div class="join-actions">
+        <a class="button red" href="mailto:secularperspective@outlook.com?subject=TAC%20membership%20enquiry">Contact TAC ↗</a>
+        <a class="underlink" href="mailto:secularperspective@outlook.com?subject=TAC%20membership%20application%20enquiry">Ask about membership →</a>
+        <small>secularperspective@outlook.com</small>
+      </div>
+    </div>
+  </section>
+
 </main>
-<footer><div class="footer-main"><a class="brand footer-brand" href="#home"><img src="assets/tac-official-round-insignia.jpg" alt=""><span><b>THE ANARCHIST CONFEDERATION</b><small>TAC · VOLUNTARY FEDERATION</small></span></a><p>No Gods. No Masters. Mutual Aid. Free Association.</p></div><div class="footer-bottom"><span>Public foundation prototype · © TAC</span><div><a href="#charter">Charter</a><a href="#members">Members &amp; affiliates</a><a href="#governance">Governance</a><a href="#transparency">Transparency</a><a href="#contacts">Contacts</a></div></div></footer>
+
+<footer>
+  <div class="footer-main">
+    <a class="brand footer-brand" href="#home">
+      <img src="assets/tac-official-round-insignia.jpg" alt="">
+      <span>
+        <b>THE ANARCHIST CONFEDERATION</b>
+        <small>TAC · VOLUNTARY FEDERATION</small>
+      </span>
+    </a>
+    <p>No Gods. No Masters. Mutual Aid. Free Association.</p>
+  </div>
+
+  <div class="footer-bottom">
+    <span>Public foundation prototype · © TAC</span>
+    <div>
+      <a href="#charter">Charter</a>
+      <a href="#members">Members &amp; affiliates</a>
+      <a href="#governance">Governance</a>
+      <a href="#transparency">Transparency</a>
+      <a href="#contacts">Contacts</a>
+    </div>
+  </div>
+</footer>
+
 <script src="app.js"></script>
-</body></html>
+</body>
+</html>
