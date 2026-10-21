@@ -46,24 +46,55 @@ const languageNames = {
 };
 
 function updateLanguageNotice() {
-  if (!languageSelect) return;
+  const languageSelect = document.getElementById('language');
+  const languageStatus = document.getElementById('languageStatus');
+
+  if (!languageSelect || !languageStatus) return;
 
   const chosen = languageSelect.value;
 
-  // The published page content is currently English.
+  // The published website content is currently English.
   document.documentElement.lang = 'en';
 
-  if (!languageStatus) return;
-
+  languageStatus.hidden = false;
   languageStatus.setAttribute('role', 'status');
   languageStatus.setAttribute('aria-live', 'polite');
-  languageStatus.hidden = false;
 
   if (chosen === 'en') {
     languageStatus.textContent =
       'English is the current published website language.';
     return;
   }
+
+  const languageNames = {
+    mt: 'Maltese',
+    es: 'Spanish',
+    fr: 'French',
+    it: 'Italian',
+    de: 'German',
+    vi: 'Vietnamese',
+    hi: 'Hindi',
+    zh: 'Chinese',
+    ru: 'Russian',
+    ar: 'Arabic',
+    pt: 'Portuguese',
+    nl: 'Dutch',
+    el: 'Greek',
+    ko: 'Korean',
+    ja: 'Japanese',
+    af: 'Afrikaans',
+    zu: 'isiZulu',
+    mn: 'Mongolian',
+    lo: 'Lao'
+  };
+
+  const languageName = languageNames[chosen];
+
+  languageStatus.textContent = languageName
+    ? The ${languageName} translation is not yet published and reviewed. The website content remains in English. Your selection has been kept.
+    : 'This language option is not recognised. The website content remains in English.';
+}
+
 
   const languageName = languageNames[chosen];
 
