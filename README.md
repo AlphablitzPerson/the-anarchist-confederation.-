@@ -42,3 +42,5 @@ The public site includes separate **Official Members** and **Affiliate Members**
 - Replaced the browser alert for untranslated languages with an inline accessible status message and a clear English fallback.
 - Preserved the supplied insignia, both flags, member links, social links and autonomy guardrails.
 - The CMS, authenticated member area, live directory submissions, news publishing and application storage are still not connected. Those require a selected/configured service and should not be advertised as operational.
+
+  Testing
