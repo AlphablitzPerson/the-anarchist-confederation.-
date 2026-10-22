@@ -7,16 +7,67 @@
 <meta name="theme-color" content="#171717">
 <meta name="description" content="The Anarchist Confederation (TAC): autonomy, mutual aid, free association and voluntary federation.">
 <title>The Anarchist Confederation (TAC)</title>
-<link rel="icon" href="assets/tac-official-round-insignia.jpg">
+<link rel="icon" href="assets/tac-official-round-insignia.png">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+/* Official TAC anthem */
+.anthem-panel {
+  display: grid;
+  grid-template-columns: minmax(140px, 240px) minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid rgba(180, 30, 40, 0.35);
+  border-radius: 12px;
+  background: var(--paper, #f5f1e8);
+}
+
+.anthem-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.anthem-copy h2 {
+  margin: 0.5rem 0 1rem;
+}
+
+.anthem-copy audio {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.anthem-copy small {
+  display: block;
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .anthem-panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .anthem-art img {
+    width: min(65%, 200px);
+    margin-inline: auto;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="header">
   <a class="brand" href="#home">
-    <img src="assets/tac-official-round-insignia.jpg" alt="Official TAC round insignia">
+    <img src="assets/tac-official-round-insignia.png" alt="Official TAC round insignia">
     <span>
       <b>THE ANARCHIST<br>CONFEDERATION</b>
       <small>TAC · VOLUNTARY FEDERATION</small>
@@ -68,21 +119,24 @@
 
 <main id="main">
 
+  <!-- HOMEPAGE -->
   <section class="hero" id="home">
     <div class="hero-copy">
       <p class="eyebrow">AUTONOMY · SOLIDARITY · FEDERATION</p>
       <h1>No Gods. No Masters.<br><em>Mutual Aid. Free Association.</em></h1>
       <p class="lede">The Anarchist Confederation connects autonomous communities, collectives, labour unions and individuals through voluntary cooperation, direct participation and mutual aid.</p>
+
       <div class="actions">
         <a class="button red" href="#charter">Read the charter ↗</a>
         <a class="underlink" href="#join">Explore participation →</a>
       </div>
+
       <p class="note">A confederation of autonomous participants — not a centralised ruling body.</p>
     </div>
 
     <div class="hero-art">
       <div class="halo"></div>
-      <img src="assets/tac-official-round-insignia.jpg" alt="Official TAC round insignia">
+      <img src="assets/tac-official-round-insignia.png" alt="Official TAC round insignia">
       <span>OFFICIAL CONFEDERATION INSIGNIA</span>
     </div>
 
@@ -92,6 +146,35 @@
     </div>
   </section>
 
+  <!-- OFFICIAL TAC ANTHEM -->
+  <section class="section anthem" id="anthem">
+    <div class="kicker">OFFICIAL CONFEDERATION ANTHEM</div>
+
+    <div class="anthem-panel">
+      <div class="anthem-art">
+        <img
+          src="assets/tac-official-round-insignia.png"
+          alt="The Anarchist Confederation official insignia"
+          loading="lazy">
+      </div>
+
+      <div class="anthem-copy">
+        <p class="eyebrow">TAC · MUSIC &amp; SOLIDARITY</p>
+        <h2>ONE WORLD, <em>FREE.</em></h2>
+        <p>The official anthem of The Anarchist Confederation. Listen using the player below.</p>
+
+        <audio controls preload="none">
+          <source src="assets/ONE%20WORLD%2C%20FREE.mp3" type="audio/mpeg">
+          Your browser does not support audio playback.
+          <a href="assets/ONE%20WORLD%2C%20FREE.mp3">Open the anthem file</a>.
+        </audio>
+
+        <small>Playback is controlled by the visitor.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
   <section class="section intro" id="about">
     <div class="kicker">01 / WHO WE ARE</div>
     <div class="two">
@@ -103,6 +186,7 @@
     </div>
   </section>
 
+  <!-- FOUNDATIONAL DOCUMENTS -->
   <section class="section paper" id="charter">
     <div class="kicker">02 / FOUNDATIONAL DOCUMENTS</div>
     <div class="section-head">
@@ -159,6 +243,7 @@
     <p class="document-note">These links serve the supplied PDFs directly. Confirm official version numbers, adoption dates and any publication restrictions before treating this page as a formal document register.</p>
   </section>
 
+  <!-- PRINCIPLES -->
   <section class="section principles">
     <div class="kicker">03 / PRINCIPLES IN PRACTICE</div>
     <div class="principle-grid">
@@ -185,6 +270,7 @@
     </div>
   </section>
 
+  <!-- NETWORK -->
   <section class="dark" id="network">
     <div class="section network">
       <div>
@@ -205,6 +291,7 @@
     </div>
   </section>
 
+  <!-- PUBLIC NODE DIRECTORY -->
   <section class="section" id="directory">
     <div class="kicker">05 / PUBLIC NODE DIRECTORY</div>
     <div class="section-head">
@@ -233,6 +320,7 @@
     </div>
   </section>
 
+  <!-- MEMBERS AND AFFILIATES -->
   <section class="section members" id="members">
     <div class="kicker">06 / CONFEDERATION NETWORK</div>
     <div class="section-head">
@@ -259,6 +347,7 @@
     <p class="members-note">Directory entries should be maintained with each organisation’s consent and updated when its affiliation status changes.</p>
   </section>
 
+  <!-- OFFICIAL CONTACTS -->
   <section class="section contacts" id="contacts">
     <div class="kicker">07 / OFFICIAL CONTACTS</div>
     <div class="section-head">
@@ -293,8 +382,9 @@
     </div>
   </section>
 
+  <!-- GOVERNANCE -->
   <section class="section governance" id="governance">
-    <div class="kicker">06 / HOW WE ORGANISE</div>
+    <div class="kicker">08 / HOW WE ORGANISE</div>
     <div class="two">
       <div>
         <h2>Delegation is a task,<br><em>not a throne.</em></h2>
@@ -323,9 +413,10 @@
     </div>
   </section>
 
+  <!-- OFFICIAL SYMBOLS -->
   <section class="dark flags">
     <div class="section">
-      <div class="kicker light">07 / OFFICIAL SYMBOLS</div>
+      <div class="kicker light">09 / OFFICIAL SYMBOLS</div>
       <div class="section-head">
         <h2>Recognisable symbols.<br><em>Shared commitments.</em></h2>
         <p>Supplied official artwork is used as provided. The mutual-defence variant is shown as a distinct flag variant, not as a replacement for the primary flag.</p>
@@ -333,7 +424,7 @@
 
       <div class="flag-grid">
         <figure>
-          <img src="assets/tac-anarcho-syndicalist-cog-flag.jpg" alt="TAC anarcho-syndicalist cog flag">
+          <img src="assets/tac-anarcho-syndicalist-cog-flag.jpg" alt="TAC anarcho-syndicalist cog flag" loading="lazy">
           <figcaption>
             <b>Anarcho-Syndicalist Cog Flag</b>
             <span>Worker-led unionism, labour organisation and technical collectives.</span>
@@ -341,7 +432,7 @@
         </figure>
 
         <figure>
-          <img src="assets/tac-mutual-defense-shield-flag.jpg" alt="TAC mutual-defence shield flag variant">
+          <img src="assets/tac-mutual-defense-shield-flag.jpg" alt="TAC mutual-defence shield flag variant" loading="lazy">
           <figcaption>
             <b>Mutual-Defence Shield Variant</b>
             <span>Federated moderation defence, security, resilience and platform protection.</span>
@@ -351,8 +442,9 @@
     </div>
   </section>
 
+  <!-- MUTUAL AID -->
   <section class="section" id="projects">
-    <div class="kicker">08 / MUTUAL AID &amp; COLLABORATION</div>
+    <div class="kicker">10 / MUTUAL AID &amp; COLLABORATION</div>
     <div class="section-head">
       <h2>Solidarity made <em>practical.</em></h2>
       <p>Use this space to find collaborators, share resources and propose projects without centralising control over local work.</p>
@@ -381,8 +473,9 @@
     <p class="status">Project listings and submissions will be enabled after the CMS workflow is configured.</p>
   </section>
 
+  <!-- NEWS -->
   <section class="section news" id="news">
-    <div class="kicker">09 / NEWS &amp; ANNOUNCEMENTS</div>
+    <div class="kicker">11 / NEWS &amp; ANNOUNCEMENTS</div>
     <div class="section-head">
       <h2>Updates from the <em>network.</em></h2>
       <p>Only approved announcements will appear here. This prototype contains no fabricated news or decision records.</p>
@@ -395,20 +488,23 @@
     </div>
   </section>
 
+  <!-- TRANSPARENCY -->
   <section class="section transparency" id="transparency">
     <div class="two">
       <div>
-        <div class="kicker">10 / TRANSPARENCY &amp; RECORDS</div>
+        <div class="kicker">12 / TRANSPARENCY &amp; RECORDS</div>
         <h2>Open decisions.<br><em>Careful stewardship.</em></h2>
       </div>
 
       <div>
         <p>Publish decisions and administrative records that are designated public under TAC’s rules. Protect personal information, private correspondence, and security-sensitive details.</p>
+
         <div class="record">
           <span class="dot"></span>
           <b>Public decisions log</b>
           <span>Awaiting approved records</span>
         </div>
+
         <div class="record">
           <span class="dot"></span>
           <b>Amendment history</b>
@@ -418,6 +514,7 @@
     </div>
   </section>
 
+  <!-- PARTICIPATION -->
   <section class="join-wrap" id="join">
     <div class="section join-panel">
       <div>
@@ -436,10 +533,11 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <a class="brand footer-brand" href="#home">
-      <img src="assets/tac-official-round-insignia.jpg" alt="">
+      <img src="assets/tac-official-round-insignia.png" alt="Official TAC insignia">
       <span>
         <b>THE ANARCHIST CONFEDERATION</b>
         <small>TAC · VOLUNTARY FEDERATION</small>
