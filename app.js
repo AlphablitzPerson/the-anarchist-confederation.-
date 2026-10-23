@@ -12,10 +12,11 @@
   const nodeSearch = document.getElementById("nodeSearch");
   const nodeType = document.getElementById("nodeType");
 
+  // Keep these codes aligned with the options in index.html.
   const supportedLanguages = [
-    "en", "mt", "es", "fr", "it", "de", "vi", "hi",
+    "en", "mt", "es", "fr", "it", "de", "vi", "hi", "ur",
     "zh-CN", "ru", "ar", "pt", "nl", "el", "ko", "ja",
-    "af", "zu", "mn", "lo"
+    "af", "zu", "mn", "lo", "tr", "cop", "la", "eo"
   ];
 
   const languageNames = {
@@ -27,6 +28,7 @@
     de: "Deutsch",
     vi: "Tiếng Việt",
     hi: "हिन्दी",
+    ur: "اردو",
     "zh-CN": "简体中文（普通话）",
     ru: "Русский",
     ar: "العربية",
@@ -38,9 +40,15 @@
     af: "Afrikaans",
     zu: "isiZulu",
     mn: "Монгол",
-    lo: "ລາວ"
+    lo: "ລາວ",
+    tr: "Türkçe",
+    cop: "Coptic",
+    la: "Classical Latin",
+    eo: "Esperanto"
   };
 
+  // Coptic is included in the selector, but Google Translate may not
+  // offer it. If unavailable, the site explicitly remains in English.
   const STORAGE_KEY = "tac-preferred-language";
 
   let translateReady = false;
@@ -61,6 +69,7 @@
     );
 
     const srLabel = menuButton.querySelector(".sr");
+
     if (srLabel) {
       srLabel.textContent = isOpen
         ? "Close navigation"
@@ -100,13 +109,18 @@
 
   function setDocumentLanguage(language, translated) {
     document.documentElement.lang = translated ? language : "en";
-    document.documentElement.dir =
-      translated && language === "ar" ? "rtl" : "ltr";
+
+    // Arabic and Urdu are written right to left.
+    // Restore left-to-right direction for all other languages.
+    const isRTL = translated && ["ar", "ur"].includes(language);
+
+    document.documentElement.dir = isRTL ? "rtl" : "ltr";
   }
 
   function getSavedLanguage() {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
+
       return supportedLanguages.includes(saved) ? saved : "en";
     } catch {
       return "en";
@@ -117,7 +131,7 @@
     try {
       localStorage.setItem(STORAGE_KEY, language);
     } catch {
-      // The site remains usable if browser storage is unavailable.
+      // The website remains usable if browser storage is unavailable.
     }
   }
 
@@ -150,6 +164,7 @@
 
   function hasGoogleLanguage(language) {
     const combo = getGoogleLanguageSelector();
+
     if (!combo) return false;
 
     return Array.from(combo.options).some(
@@ -157,14 +172,15 @@
     );
   }
 
-  // English must undo the translated DOM, not merely change the selector.
-  // Clear the common Google translation cookie and reload the original page.
+  // English restores the original page instead of merely changing
+  // the visible selector. Clear common Google translation cookies.
   function resetToEnglish() {
     pendingLanguage = null;
     saveLanguage("en");
     setDocumentLanguage("en", false);
 
     if (englishReloadStarted) return;
+
     englishReloadStarted = true;
 
     try {
@@ -176,14 +192,16 @@
         window.location.hostname;
 
       const parts = window.location.hostname.split(".");
+
       if (parts.length >= 2) {
         const parentDomain = "." + parts.slice(-2).join(".");
+
         document.cookie =
           "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=" +
           parentDomain;
       }
     } catch {
-      // Reload even if browser cookie access is restricted.
+      // Continue to reload if cookie access is restricted.
     }
 
     showStatus("Returning to the original English page…");
@@ -191,16 +209,23 @@
   }
 
   function applyGoogleLanguage(language) {
+    if (!supportedLanguages.includes(language)) {
+      language = "en";
+    }
+
     if (language === "en") {
       resetToEnglish();
       return;
     }
 
     if (translateFailed) {
+      pendingLanguage = null;
       setDocumentLanguage("en", false);
+
       showStatus(
         "Automatic translation is unavailable. The website remains in English."
       );
+
       return;
     }
 
@@ -209,27 +234,30 @@
     if (!translateReady || !combo) {
       pendingLanguage = language;
       setDocumentLanguage("en", false);
+
       showStatus(
         "Preparing automatic translation into " +
           languageNames[language] +
           ". The page may remain in English while the service loads."
       );
+
       return;
     }
 
     if (!hasGoogleLanguage(language)) {
       pendingLanguage = null;
       setDocumentLanguage("en", false);
+
       showStatus(
         "The translation service does not offer " +
           languageNames[language] +
           " in this session. The website remains in English."
       );
+
       return;
     }
 
     pendingLanguage = null;
-    setDocumentLanguage(language, true);
 
     showStatus(
       "Requesting automatic translation into " +
@@ -237,11 +265,16 @@
         ". Some wording may be inaccurate or may not use the requested regional variant."
     );
 
+    // Request the translation. Direction and language metadata are
+    // updated after the request; Google Translate may take time to act.
     combo.value = language;
     combo.dispatchEvent(new Event("change", { bubbles: true }));
+
+    setDocumentLanguage(language, true);
   }
 
-  // Google calls this global function when its script loads.
+  // GOOGLE TRANSLATE INITIALISATION CALLBACK
+
   window.googleTranslateElementInit = function () {
     try {
       if (
@@ -256,7 +289,7 @@
         {
           pageLanguage: "en",
           includedLanguages: supportedLanguages
-            .filter((language) => language !== "en")
+            .filter((language) => !["en", "cop"].includes(language))
             .join(","),
           autoDisplay: false
         },
@@ -292,6 +325,8 @@
           translateFailed = true;
 
           if (languageSelect && languageSelect.value !== "en") {
+            setDocumentLanguage("en", false);
+
             showStatus(
               "The translation widget did not finish loading. The website remains in English."
             );
@@ -301,6 +336,7 @@
     } catch {
       translateFailed = true;
       setDocumentLanguage("en", false);
+
       showStatus(
         "Automatic translation could not start. The website remains in English."
       );
@@ -322,6 +358,7 @@
       translateFailed = true;
       translateReady = false;
       pendingLanguage = null;
+
       setDocumentLanguage("en", false);
 
       if (languageSelect && languageSelect.value !== "en") {
@@ -338,10 +375,18 @@
 
   if (languageSelect) {
     const initialLanguage = getSavedLanguage();
+
     languageSelect.value = initialLanguage;
+
+    // If the saved language is missing from index.html, fall back safely.
+    if (languageSelect.value !== initialLanguage) {
+      languageSelect.value = "en";
+      saveLanguage("en");
+    }
 
     languageSelect.addEventListener("change", () => {
       const selected = languageSelect.value;
+
       const language = supportedLanguages.includes(selected)
         ? selected
         : "en";
@@ -358,6 +403,7 @@
 
     if (initialLanguage !== "en") {
       pendingLanguage = initialLanguage;
+
       showStatus(
         "Preparing automatic translation into " +
           languageNames[initialLanguage] +
@@ -365,6 +411,7 @@
       );
     } else {
       setDocumentLanguage("en", false);
+      hideStatus();
     }
   }
 
@@ -379,7 +426,7 @@
       emptyState.setAttribute("aria-live", "polite");
     }
 
-    // This prototype has no directory database yet.
+    // The prototype has no directory database yet.
     // Do not invent entries or imply that filtering is operational.
   }
 
