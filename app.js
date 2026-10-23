@@ -13,6 +13,38 @@
   const nodeType = document.getElementById("nodeType");
   const copticTranslations = window.TAC_TRANSLATIONS?.cop ?? null;
 
+  // PROVISIONAL SAHIDIC COPTIC TRANSLATIONS
+  // These entries are a starter glossary, not a verified full translation.
+  // Untranslated website text remains in English.
+
+  const copticGlossary = {
+    "About": "Ⲉⲑⲃⲉ",
+    "Language": "Ⲁⲥⲡⲉ",
+    "Contacts": "Ⲛⲉⲥⲙⲟⲩ",
+    "Autonomy": "Ⲙⲉⲧⲁⲩⲧⲟⲛⲟⲙⲓⲁ",
+    "Mutual aid": "Ⲙⲉⲧⲃⲟⲏⲑⲓⲁ",
+    "News": "Ⲛⲉⲛⲉⲩⲁϣ",
+    "Governance": "Ⲙⲉⲧⲟⲩⲉⲣϩⲏⲅⲉⲙⲱⲛ",
+    "Members & affiliates": "Ⲛⲉⲙⲃⲣⲟⲥ ⲛⲉⲙ ⲛⲉⲙⲙⲉⲧⲟⲭⲟⲥ",
+    "Node directory": "Ⲡⲓⲕⲁⲧⲁⲗⲟⲅⲟⲥ ⲛ̀ⲛⲓⲕⲟⲓⲛⲟⲛⲓⲁ",
+    "Foundational Charter": "Ⲡⲓⲭⲁⲣⲧⲏⲥ ⲛ̀ⲧⲉ ⲡⲓⲥⲉⲙⲛⲓ",
+    "Manifesto": "Ⲡⲓⲙⲁⲛⲓϩⲟⲩⲧ",
+    "Search entries": "Ⲥⲱϣ ⲛ̀ⲛⲓⲅⲣⲁⲫⲏ",
+    "All types": "Ⲛⲓⲧⲏⲣⲟⲩ",
+    "Community": "Ⲕⲟⲓⲛⲟⲛⲓⲁ",
+    "Collective": "Ⲕⲟⲗⲗⲉⲕⲧⲓⲃ",
+    "Labour union": "Ⲥⲩⲛⲇⲓⲕⲁⲧⲟⲥ",
+    "Digital node": "Ⲛⲟⲇⲟⲥ ⲛ̀ⲇⲓⲅⲓⲧⲁⲗ",
+    "Official member": "Ⲙⲉⲙⲃⲣⲟⲥ ⲛ̀ⲉⲡⲓⲥⲙⲟⲩ",
+    "Read PDF ↗": "Ⲱϣ ⲛ̀ⲡⲓ PDF ↗",
+    "Download PDF ↓": "Ϫⲓ ⲛ̀ⲡⲓ PDF ↓",
+    "Visit Discord ↗": "Ϫⲓ ⲙ̀ⲙⲟⲕ ⲉ Discord ↗",
+    "Contact TAC ↗": "Ⲥⲙⲟⲩ ⲛ̀TAC ↗",
+    "Open the anthem file": "Ⲟⲩⲱⲛ ⲛ̀ⲡⲓϫⲱⲙ ⲛ̀ϩⲏⲧ",
+    "Preparing automatic translation": "Ⲥⲉⲥⲃⲧⲱⲧ ⲛ̀ⲧⲉ ⲡⲓⲟⲩⲱϩ ⲛ̀ⲁⲩⲧⲟⲙⲁⲧⲟⲥ"
+  };
+
+
   // Keep these codes aligned with the options in index.html.
   const supportedLanguages = [
     "en", "mt", "es", "fr", "it", "de", "vi", "hi", "ur",
@@ -371,23 +403,89 @@
 
     document.head.appendChild(script);
   }
+  
   // MANUAL COPTIC TRANSLATION
 
   function applyCopticLanguage() {
     pendingLanguage = null;
     saveLanguage("cop");
-    setDocumentLanguage("cop", false);
+    restoreCopticOriginalText();
+    translateCopticPage();
+  }
+
+  
+
+  // COPTIC TRANSLATION
+
+  const copticOriginals = new Map();
+
+  function translateCopticPage() {
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT
+    );
+
+    const textNodes = [];
+    let node;
+
+    while ((node = walker.nextNode())) {
+      const parent = node.parentElement;
+
+      if (
+        !parent ||
+        parent.closest(
+          "script, style, textarea, input, select, option, audio, noscript"
+        ) ||
+        parent.closest("#languageStatus")
+      ) {
+        continue;
+      }
+
+      textNodes.push(node);
+    }
+
+    let translatedCount = 0;
+
+    for (const textNode of textNodes) {
+      if (!copticOriginals.has(textNode)) {
+        copticOriginals.set(textNode, textNode.nodeValue);
+      }
+
+      const original = copticOriginals.get(textNode);
+      const trimmed = original.trim();
+
+      if (Object.prototype.hasOwnProperty.call(copticGlossary, trimmed)) {
+        const leading = original.match(/^\s*/)?.[0] ?? "";
+        const trailing = original.match(/\s*$/)?.[0] ?? "";
+
+        textNode.nodeValue =
+          leading + copticGlossary[trimmed] + trailing;
+
+        translatedCount++;
+      } else {
+        textNode.nodeValue = original;
+      }
+    }
+
+    document.documentElement.lang = "cop";
+    document.documentElement.dir = "ltr";
 
     showStatus(
-      "Sahidic Coptic selected. The manual translation is in development; the website remains in English."
+      "Sahidic Coptic selected. " +
+      translatedCount +
+      " text items matched the provisional glossary; remaining text is in English."
     );
   }
 
   function restoreCopticOriginalText() {
-    // Reserved for restoring translated page elements once
-    // reviewed Coptic translations have been connected.
+    for (const [textNode, original] of copticOriginals) {
+      if (textNode.isConnected) {
+        textNode.nodeValue = original;
+      }
+    }
+
+    copticOriginals.clear();
   }
-  
 
   // LANGUAGE SELECTOR
 
