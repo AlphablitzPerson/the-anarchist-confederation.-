@@ -1186,3 +1186,20 @@ nav .language-status[hidden] {
   color: var(--red) !important;
   font-style: normal;
 }
+
+
+/* TAC OFFICIAL FLAGS — IMAGE DISPLAY */
+.flag-grid figure {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.flag-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  padding: 8px;
+  background: #222;
+}
