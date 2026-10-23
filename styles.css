@@ -1169,21 +1169,20 @@ nav .language-status[hidden] {
 
 
 
-/* TAC anthem heading — full title and correct colours */
+
+/* TAC ANTHEM — HEADING COLOURS */
 .anthem .anthem-copy h2 {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  color: #b41e28;
+  color: var(--white) !important;
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  line-height: 1.15;
+  letter-spacing: -.055em;
   white-space: normal;
   overflow-wrap: normal;
-  word-break: normal;
-  font-size: clamp(2rem, 5vw, 3.8rem);
-  line-height: 1.15;
 }
 
 .anthem .anthem-copy h2 em {
-  display: inline;
-  color: #b41e28;
-  white-space: normal;
+  color: var(--red) !important;
+  font-style: normal;
 }
