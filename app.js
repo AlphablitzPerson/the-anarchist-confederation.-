@@ -11,6 +11,7 @@
   const languageStatus = document.getElementById("languageStatus");
   const nodeSearch = document.getElementById("nodeSearch");
   const nodeType = document.getElementById("nodeType");
+  const copticTranslations = window.TAC_TRANSLATIONS?.cop ?? null;
 
   // Keep these codes aligned with the options in index.html.
   const supportedLanguages = [
@@ -370,6 +371,23 @@
 
     document.head.appendChild(script);
   }
+  // MANUAL COPTIC TRANSLATION
+
+  function applyCopticLanguage() {
+    pendingLanguage = null;
+    saveLanguage("cop");
+    setDocumentLanguage("cop", false);
+
+    showStatus(
+      "Sahidic Coptic selected. The manual translation is in development; the website remains in English."
+    );
+  }
+
+  function restoreCopticOriginalText() {
+    // Reserved for restoring translated page elements once
+    // reviewed Coptic translations have been connected.
+  }
+  
 
   // LANGUAGE SELECTOR
 
@@ -395,13 +413,19 @@
       saveLanguage(language);
 
       if (language === "en") {
+        restoreCopticOriginalText();
         resetToEnglish();
+      } else if (language === "cop") {
+        applyCopticLanguage();
       } else {
+        restoreCopticOriginalText();
         applyGoogleLanguage(language);
       }
     });
 
-    if (initialLanguage !== "en") {
+    if (initialLanguage === "cop") {
+      applyCopticLanguage();
+    } else if (initialLanguage !== "en") {
       pendingLanguage = initialLanguage;
 
       showStatus(
