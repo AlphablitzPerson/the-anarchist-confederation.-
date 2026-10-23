@@ -1168,11 +1168,13 @@ nav .language-status[hidden] {
 }
 
 
-/* TAC anthem heading — display the complete title */
+
+/* TAC anthem heading — full title and correct colours */
 .anthem .anthem-copy h2 {
   display: block;
   width: 100%;
   max-width: 100%;
+  color: #b41e28;
   white-space: normal;
   overflow-wrap: normal;
   word-break: normal;
@@ -1182,5 +1184,6 @@ nav .language-status[hidden] {
 
 .anthem .anthem-copy h2 em {
   display: inline;
+  color: #b41e28;
   white-space: normal;
 }
